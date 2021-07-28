@@ -1,0 +1,67 @@
+﻿#category-selector {
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+}
+.category-wrapper {
+    border-radius: 10px;
+    background-color: #ddd;
+    width: 7em;
+    margin: .5em;
+}
+.category-container {
+    background-color: #00000000;
+    width: 100%;
+    transition: .5s;
+    padding: .5em;
+    display: flex;
+    border-radius: 10px;
+
+}
+
+.category-name {
+    padding: .5em;
+    margin: auto;
+}
+
+.category-checkmark {
+    display: flex;
+    padding: .5em;
+    width: min-content;
+}
+
+.category-checkmark > input {
+    margin: auto;
+}
+
+.main {
+    width: 100%;
+    overflow: hidden;
+}
+
+.category-active {
+    animation: active .2s linear forwards;
+}
+
+.category-inactive {
+    animation: inactive .2s linear forwards;
+}
+
+@keyframes active {
+    from {
+        background-color: inherit;
+    }
+    to {
+        background-color: #466e94;
+    }
+}
+
+@keyframes inactive {
+    from {
+        background-color: #466e94;
+    } 
+    to {
+         background-color: inherit;
+    }
+ }
