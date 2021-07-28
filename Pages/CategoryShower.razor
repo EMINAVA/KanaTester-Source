@@ -1,0 +1,45 @@
+@inject ICategoryRepository _categoryRepository;
+
+<div id="category-selector">
+    @foreach (var category in _categories)
+    {
+        <div class="category-wrapper" @onclick="async () => await CheckboxClicked(category.Name, !category.Included)">
+            <div class="category-container @(category.Included ? "category-active" : "category-inactive")">
+                <div class="category-name">@category.Name</div>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    private List<CategoryViewModel> _categories = new();
+    
+    [Parameter] public EventCallback<List<CategoryViewModel>> SelectedCategoriesChanged { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        _categories = (await _categoryRepository.GetCategoryNames())
+            .Select(x => new CategoryViewModel { Name = x })
+            .ToList();
+    }
+    private async Task CheckboxClicked(string categoryName, object stateObj)
+    {
+        var category = _categories.Single(x => x.Name == categoryName);
+        category.Included = (bool) stateObj;
+        
+        await SelectedCategoriesChanged.InvokeAsync(_categories.Where(x => x.Included).ToList());
+        /*
+        var category = new CategoryViewModel { Name = categoryName, Included = (bool) stateObj };
+        
+        if (category.Included)
+        {
+            _includedCategories.Add(category);
+        } else
+        {
+            _includedCategories.RemoveAt(
+                _includedCategories.FindIndex(x => x.Name == category.Name));
+        }*/
+
+    }
+
+}
