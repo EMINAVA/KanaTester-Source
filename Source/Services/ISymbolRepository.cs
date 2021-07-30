@@ -14,5 +14,6 @@ namespace KanaTester
         Symbol GetSymbolByRomaji(string romajiSymbol);
         void UpdateSymbol(Symbol symbol);
         void SaveChanges();
+        Task<IList<Symbol>> GetSymbolsByCategory(List<string> categories);
     }
 }

@@ -26,8 +26,6 @@ namespace KanaTester
 
             var host = builder.Build();
 
-            await host.Services.GetRequiredService<ISymbolRepository>().Init();
-            
             await host.RunAsync();
         }
 
@@ -35,6 +33,10 @@ namespace KanaTester
         {
             services.AddScoped<ISymbolRepository, SymbolRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ISerializingService, SerializingService>();
+            services.AddScoped<ISymbolPicker, SymbolPicker>();
+            services.AddScoped<IGuesser, Guesser>();
+            services.AddScoped<ISymbolRepositoryFactory, SymbolRepositoryFactory>();
         }
     }
 }

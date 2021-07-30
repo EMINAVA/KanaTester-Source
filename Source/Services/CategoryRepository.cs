@@ -10,12 +10,10 @@ namespace KanaTester
     {
         private readonly HttpClient _http;
         private IList<Category> _categories = null;
-        private readonly ISymbolRepository _symbolRepository;
 
-        public CategoryRepository(HttpClient http, ISymbolRepository symbolRepository)
+        public CategoryRepository(HttpClient http)
         {
             _http = http;
-            _symbolRepository = symbolRepository;
         }
 
         private async Task<IList<Category>> GetCategories()
@@ -25,18 +23,17 @@ namespace KanaTester
                 return _categories;
             }
 
-            _categories = await _http.GetFromJsonAsync<IList<Category>>("categories.json");
+            _categories = await _http.GetFromJsonAsync<IList<Category>>(LocalStorageNames.FileNames[LocalStorageNames.Categories]);
             return _categories;
         }
 
-        public async Task<IList<Symbol>> GetSymbolsInCategory(string categoryName)
+        public async Task<IList<string>> GetSymbolsInCategory(string categoryName)
         {
             var cat = (await GetCategories())
                 .First(x => x.Name == categoryName);
 
-            var symbols = cat
+            List<string> symbols = cat
                 .JapaneseSymbols
-                .Select(x => _symbolRepository.GetSymbolByJapanese(x))
                 .ToList();
             
             return symbols;

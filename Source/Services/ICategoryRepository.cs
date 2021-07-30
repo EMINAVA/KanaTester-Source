@@ -5,7 +5,7 @@ namespace KanaTester
 {
     public interface ICategoryRepository
     {
-        Task<IList<Symbol>> GetSymbolsInCategory(string categoryName);
+        Task<IList<string>> GetSymbolsInCategory(string categoryName);
         Task<IList<string>> GetCategoryNames();
     }
 }

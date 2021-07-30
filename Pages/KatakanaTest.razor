@@ -1,0 +1,4 @@
+﻿@page "/KatakanaTest"
+@inject ISymbolRepositoryFactory _symbolRepositoryFactory
+
+<Tester SymbolRepository="@_symbolRepositoryFactory.CreateKatakanaSymbolRepository"></Tester>

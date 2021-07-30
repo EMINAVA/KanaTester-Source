@@ -2,163 +2,169 @@
     {
         "Name": "Vocali",
         "JapaneseSymbols": [
-            "あ",
-            "い",
-            "う",
-            "え",
-            "お"
+            "a",
+            "i",
+            "u",
+            "e",
+            "o"
         ]
     },
     {
         "Name": "K*",
         "JapaneseSymbols": [
-            "か",
-            "き",
-            "く",
-            "け",
-            "こ"
+            "ka",
+            "ki",
+            "ku",
+            "ke",
+            "ko"
         ]
     },
     {
         "Name": "S*",
         "JapaneseSymbols": [
-            "さ",
-            "し",
-            "す",
-            "せ",
-            "そ"
+            "sa",
+            "shi",
+            "su",
+            "se",
+            "so"
         ]
     },
     {
         "Name": "T*",
         "JapaneseSymbols": [
-            "た",
-            "ち",
-            "つ",
-            "て",
-            "と"
+            "ta",
+            "chi",
+            "tsu",
+            "te",
+            "to"
         ]
     },
     {
         "Name": "N*",
         "JapaneseSymbols": [
-            "な",
-            "に",
-            "ぬ",
-            "ね",
-            "の"
+            "na",
+            "ni",
+            "nu",
+            "ne",
+            "no"
         ]
     },
     {
         "Name": "H*",
         "JapaneseSymbols": [
-            "は",
-            "ひ",
-            "ふ",
-            "へ",
-            "ほ"
+            "ha",
+            "hi",
+            "fu",
+            "he",
+            "ho"
         ]
     },
     {
         "Name": "M*",
         "JapaneseSymbols": [
-            "ま",
-            "み",
-            "む",
-            "め",
-            "も"
+            "ma",
+            "mi",
+            "mu",
+            "me",
+            "mo"
         ]
     },
     {
         "Name": "Y*",
         "JapaneseSymbols": [
-            "や",
-            "ゆ",
-            "よ"
+            "ya",
+            "yu",
+            "yo"
         ]
     },
     {
         "Name": "R*",
         "JapaneseSymbols": [
-            "ら",
-            "り",
-            "る",
-            "れ",
-            "ろ"
+            "ra",
+            "ri",
+            "ru",
+            "re",
+            "ro"
         ]
     },
     {
         "Name": "W* & N",
         "JapaneseSymbols": [
-            "わ",
-            "を",
-            "ん"
+            "wa",
+            "wo",
+            "n"
         ]
     },
     {
         "Name": "Dakuten",
         "JapaneseSymbols": [
-            "が",
-            "ぎ",
-            "ぐ",
-            "げ",
-            "ご",
-            "ざ",
-            "じ",
-            "ず",
-            "ぜ",
-            "ぞ",
-            "だ",
-            "づ",
-            "で",
-            "ど",
-            "ば",
-            "び",
-            "ぶ",
-            "べ",
-            "ぼ"
+            "ga",
+            "gi",
+            "gu",
+            "ge",
+            "go",
+            "za",
+            "ji",
+            "zu",
+            "ze",
+            "zo",
+            "da",
+            "zu",
+            "de",
+            "do",
+            "ba",
+            "bi",
+            "bu",
+            "be",
+            "bo"
         ]
     },
     {
         "Name": "Handakuten",
         "JapaneseSymbols": [
-            "ぱ",
-            "ぴ",
-            "ぷ",
-            "ぺ",
-            "ぽ"
+            "pa",
+            "pi",
+            "pu",
+            "pe",
+            "po"
         ]
     },
     {
         "Name": "Tre lettere",
         "JapaneseSymbols": [
-            "きゃ",
-            "きゅ",
-            "きょ",
-            "しゃ",
-            "しゅ",
-            "しょ",
-            "にゃ",
-            "にゅ",
-            "にょ",
-            "ひゃ",
-            "ひゅ",
-            "ひょ",
-            "みゃ",
-            "みゅ",
-            "みょ",
-            "りゃ",
-            "りゅ",
-            "りょ",
-            "ぎゃ",
-            "ぎゅ",
-            "ぎょ",
-            "びゃ",
-            "びゅ",
-            "にょ",
-            "ぴゃ",
-            "ぴゅ",
-            "ぴょ"
+            "kya",
+            "kyu",
+            "kyo",
+            "sha",
+            "shu",
+            "sho",
+            "nya",
+            "nyu",
+            "nyo",
+            "hya",
+            "hyu",
+            "hyo",
+            "mya",
+            "myu",
+            "myo",
+            "rya",
+            "ryu",
+            "ryo",
+            "gya",
+            "gyu",
+            "gyo",
+            "bya",
+            "byu",
+            "byo",
+            "pya",
+            "pyu",
+            "pyo",
+            "cho",
+            "ju",
+            "cha",
+            "chu",
+            "jo",
+            "ja"
         ]
     }
 ]

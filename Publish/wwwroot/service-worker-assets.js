@@ -1,8 +1,12 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
+      "hash": "sha256-VnV4H\/Ehcu15Jllcv+lXRaacCIZN4u5RiParM1VV28I=",
+      "url": "Categories.json"
+    },
+    {
       "hash": "sha256-rugdDT3jpIb0ukorkZNHYQdZdOnRhYpnRgiNiiCGToA=",
-      "url": "categories.json"
+      "url": "categories_old.json"
     },
     {
       "hash": "sha256-cj6YkO5H80sMTPANmlcY+fTshg0yFWZradLEaOoge7s=",
@@ -57,12 +61,16 @@
       "url": "css\/style.css"
     },
     {
-      "hash": "sha256-KYdXcAzMiHdhYRLh\/EPwyTCMnXGAC8+znIa1XkDVLpo=",
+      "hash": "sha256-SaQCKO8IILHYK3RgPk3p1aOXq5yR2KuRfyhDbJLVMhY=",
       "url": "default-symbols.json"
     },
     {
       "hash": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=",
       "url": "favicon.ico"
+    },
+    {
+      "hash": "sha256-7lVPFkV+XNjzXpIprQdeRoQXNbFMd\/FTDtCBvB6xu0k=",
+      "url": "Hiragana.json"
     },
     {
       "hash": "sha256-IpHFcQvs03lh6W54zoeJRG1jW+VnGmwymzxLoXtKX7Y=",
@@ -73,6 +81,10 @@
       "url": "index.html"
     },
     {
+      "hash": "sha256-rPlbYWT6M5cg2u8i9lJhl3HwSmutdpXHBqkYHWLLGqk=",
+      "url": "Katakana.json"
+    },
+    {
       "hash": "sha256-bTs5lNcii27B\/GJ0MNdiBzUxW6OH+rL2fSDUcXjQuWg=",
       "url": "manifest.json"
     },
@@ -81,7 +93,107 @@
       "url": "sample-data\/weather.json"
     },
     {
-      "hash": "sha256-azDVcel0mDCJ\/+TZSB12xpsNPnCVTan2jcNZVcYGY\/0=",
+      "hash": "sha256-EYDDlT9FWxc3LUKnjp6YHHBdpeQHscnQ6JF6ZCYjk6U=",
+      "url": "_framework\/Publish\/web.config"
+    },
+    {
+      "hash": "sha256-VnV4H\/Ehcu15Jllcv+lXRaacCIZN4u5RiParM1VV28I=",
+      "url": "_framework\/Publish\/wwwroot\/categories.json"
+    },
+    {
+      "hash": "sha256-rugdDT3jpIb0ukorkZNHYQdZdOnRhYpnRgiNiiCGToA=",
+      "url": "_framework\/Publish\/wwwroot\/categories_old.json"
+    },
+    {
+      "hash": "sha256-SaQCKO8IILHYK3RgPk3p1aOXq5yR2KuRfyhDbJLVMhY=",
+      "url": "_framework\/Publish\/wwwroot\/default-symbols.json"
+    },
+    {
+      "hash": "sha256-7lVPFkV+XNjzXpIprQdeRoQXNbFMd\/FTDtCBvB6xu0k=",
+      "url": "_framework\/Publish\/wwwroot\/Hiragana.json"
+    },
+    {
+      "hash": "sha256-rPlbYWT6M5cg2u8i9lJhl3HwSmutdpXHBqkYHWLLGqk=",
+      "url": "_framework\/Publish\/wwwroot\/Katakana.json"
+    },
+    {
+      "hash": "sha256-bTs5lNcii27B\/GJ0MNdiBzUxW6OH+rL2fSDUcXjQuWg=",
+      "url": "_framework\/Publish\/wwwroot\/manifest.json"
+    },
+    {
+      "hash": "sha256-Ey1V1fGZ\/Zgq9YuJZzZM6sPDfGbMfrN+6ajocWJ1pXk=",
+      "url": "_framework\/Publish\/wwwroot\/sample-data\/weather.json"
+    },
+    {
+      "hash": "sha256-Qeu018ex8MlOPQ4647c\/YEez54PyUvF9N707jJVV12E=",
+      "url": "_framework\/Publish\/wwwroot\/_framework\/blazor.boot.json"
+    },
+    {
+      "hash": "sha256-VnV4H\/Ehcu15Jllcv+lXRaacCIZN4u5RiParM1VV28I=",
+      "url": "_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/categories.json"
+    },
+    {
+      "hash": "sha256-rugdDT3jpIb0ukorkZNHYQdZdOnRhYpnRgiNiiCGToA=",
+      "url": "_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/categories_old.json"
+    },
+    {
+      "hash": "sha256-SaQCKO8IILHYK3RgPk3p1aOXq5yR2KuRfyhDbJLVMhY=",
+      "url": "_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/default-symbols.json"
+    },
+    {
+      "hash": "sha256-7lVPFkV+XNjzXpIprQdeRoQXNbFMd\/FTDtCBvB6xu0k=",
+      "url": "_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/Hiragana.json"
+    },
+    {
+      "hash": "sha256-rPlbYWT6M5cg2u8i9lJhl3HwSmutdpXHBqkYHWLLGqk=",
+      "url": "_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/Katakana.json"
+    },
+    {
+      "hash": "sha256-bTs5lNcii27B\/GJ0MNdiBzUxW6OH+rL2fSDUcXjQuWg=",
+      "url": "_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/manifest.json"
+    },
+    {
+      "hash": "sha256-Ey1V1fGZ\/Zgq9YuJZzZM6sPDfGbMfrN+6ajocWJ1pXk=",
+      "url": "_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/sample-data\/weather.json"
+    },
+    {
+      "hash": "sha256-Qeu018ex8MlOPQ4647c\/YEez54PyUvF9N707jJVV12E=",
+      "url": "_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/_framework\/blazor.boot.json"
+    },
+    {
+      "hash": "sha256-rugdDT3jpIb0ukorkZNHYQdZdOnRhYpnRgiNiiCGToA=",
+      "url": "_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/categories.json"
+    },
+    {
+      "hash": "sha256-bTs5lNcii27B\/GJ0MNdiBzUxW6OH+rL2fSDUcXjQuWg=",
+      "url": "_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/manifest.json"
+    },
+    {
+      "hash": "sha256-Ey1V1fGZ\/Zgq9YuJZzZM6sPDfGbMfrN+6ajocWJ1pXk=",
+      "url": "_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/sample-data\/weather.json"
+    },
+    {
+      "hash": "sha256-E30e87Z++SlZvLXZM\/JBglvD4Nr9SlveGEvIn\/Zi\/zA=",
+      "url": "_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/_framework\/blazor.boot.json"
+    },
+    {
+      "hash": "sha256-rugdDT3jpIb0ukorkZNHYQdZdOnRhYpnRgiNiiCGToA=",
+      "url": "_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/categories.json"
+    },
+    {
+      "hash": "sha256-bTs5lNcii27B\/GJ0MNdiBzUxW6OH+rL2fSDUcXjQuWg=",
+      "url": "_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/manifest.json"
+    },
+    {
+      "hash": "sha256-Ey1V1fGZ\/Zgq9YuJZzZM6sPDfGbMfrN+6ajocWJ1pXk=",
+      "url": "_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/sample-data\/weather.json"
+    },
+    {
+      "hash": "sha256-E30e87Z++SlZvLXZM\/JBglvD4Nr9SlveGEvIn\/Zi\/zA=",
+      "url": "_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/_framework\/Publish\/wwwroot\/_framework\/blazor.boot.json"
+    },
+    {
+      "hash": "sha256-Utl1b8lApsdjkVgReS5dR4604cDptBARd5fc+phEDVc=",
       "url": "_framework\/KanaTester.dll"
     },
     {
@@ -189,11 +301,11 @@
       "url": "_framework\/System.IO.Pipelines.dll"
     },
     {
-      "hash": "sha256-oGQHCLxXfRgBnGyFqutasIwnwSy1kbbvif0RnTW1S6Q=",
+      "hash": "sha256-GeXXQC8d5jGhrYevZhxhKE5fWSO3otICJlbkU2ANnSE=",
       "url": "KanaTester.styles.css"
     },
     {
-      "hash": "sha256-E30e87Z++SlZvLXZM\/JBglvD4Nr9SlveGEvIn\/Zi\/zA=",
+      "hash": "sha256-Qeu018ex8MlOPQ4647c\/YEez54PyUvF9N707jJVV12E=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -201,5 +313,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "oT5hMouS"
+  "version": "a4NaF23z"
 };

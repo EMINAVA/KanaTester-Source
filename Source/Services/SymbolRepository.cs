@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Blazored.LocalStorage;
+using Microsoft.Extensions.Logging;
 
 namespace KanaTester 
 {
@@ -12,35 +12,47 @@ namespace KanaTester
     {
         private readonly ISyncLocalStorageService _localStorageService;
         private readonly HttpClient _http;
+        private readonly ISerializingService _serializingService;
         private List<Symbol> _symbols = new();
+        private readonly ICategoryRepository _categoryRepository;
+        private readonly string _symbolCategory;
+        private readonly ILogger<SymbolRepository> _logger;
 
-        public SymbolRepository(ISyncLocalStorageService localStorageService, HttpClient http)
+        public SymbolRepository(ISyncLocalStorageService localStorageService, HttpClient http, 
+            ISerializingService serializingService, ICategoryRepository categoryRepository, 
+            string symbolCategory, ILogger<SymbolRepository> logger)
         {
-            Console.WriteLine("Symbol rep created");
             _localStorageService = localStorageService;
             _http = http;
+            _serializingService = serializingService;
+            _categoryRepository = categoryRepository;
+            _symbolCategory = symbolCategory;
+            _logger = logger;
         }
 
         public async Task Init()
         {
-            if (!_localStorageService.ContainKey(LocalStorageNames.Symbols) /*TODO: REMOVE*/ || true) 
+            if (!_localStorageService.ContainKey(_symbolCategory)) 
             {
                 _symbols = await GetSymbolsFromJson();
-                _localStorageService.SetItem(LocalStorageNames.Symbols, _symbols);
+                SaveChanges();
             } else
             {
-                _symbols = _localStorageService.GetItem<List<Symbol>>(LocalStorageNames.Symbols);
+                var symbolsString = _localStorageService.GetItem<string>(_symbolCategory);
+                _symbols = _serializingService.Deserialize<List<Symbol>>(symbolsString);
             }
         }
 
-        private Task<List<Symbol>> GetSymbolsFromJson() 
+        private async Task<List<Symbol>> GetSymbolsFromJson()
         {
-            return _http.GetFromJsonAsync<List<Symbol>>("default-symbols.json");
+            var str = await _http.GetStringAsync(LocalStorageNames.FileNames[_symbolCategory]);
+            return _serializingService.Deserialize<List<Symbol>>(str);
         }
 
         public IList<Symbol> GetSymbols() 
         {
-            return _localStorageService.GetItem<IList<Symbol>>(LocalStorageNames.Symbols);
+            var symbols = _localStorageService.GetItem<string>(_symbolCategory);
+            return _serializingService.Deserialize<IList<Symbol>>(symbols);
         }
 
         public Symbol GetSymbolByJapanese(string japaneseSymbol)
@@ -50,6 +62,7 @@ namespace KanaTester
         
         public Symbol GetSymbolByRomaji(string romajiSymbol)
         {
+            _logger.LogInformation(romajiSymbol);
             return _symbols.First(x => x.RomanizedSymbol == romajiSymbol);
         }
         
@@ -62,7 +75,21 @@ namespace KanaTester
         public void SaveChanges()
         {
             Console.WriteLine("Changes saved");
-            _localStorageService.SetItem(LocalStorageNames.Symbols, _symbols);
+            var serializedSymbols = _serializingService.Serialize(_symbols);
+            _localStorageService.SetItem(_symbolCategory, serializedSymbols);
+        }
+
+        public async Task<IList<Symbol>> GetSymbolsByCategory(List<string> categories)
+        {
+            var symbols = new List<Symbol>();
+            foreach (var category in categories)
+            {
+                foreach (var symbol in await _categoryRepository.GetSymbolsInCategory(category))
+                {
+                    symbols.Add(GetSymbolByRomaji(symbol));
+                }
+            }
+            return symbols;
         }
 
         public void Dispose()

@@ -4,6 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
      <LangVersion>9.0</LangVersion>
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
+    <BlazorCacheBootResources>false</BlazorCacheBootResources>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +17,14 @@
 
   <ItemGroup>
     <Folder Include="Publish" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\categories.json">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

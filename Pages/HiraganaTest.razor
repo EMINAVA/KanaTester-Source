@@ -1,0 +1,5 @@
+﻿@page "/HiraganaTest"
+@page "/"
+@inject ISymbolRepositoryFactory _symbolRepositoryFactory
+
+<Tester SymbolRepository="@_symbolRepositoryFactory.CreateHiraganaSymbolRepository"></Tester>

@@ -1,0 +1,77 @@
+@inject ICategoryRepository _categoryRepository
+@inject ISymbolPicker _symbolPicker
+@inject IGuesser _guesser
+
+<CategoryShower SelectedCategoriesChanged="@OnCategoriesChanged"></CategoryShower>
+
+@if (_currentSymbol is not null)
+{
+    <h2>@_currentSymbol.JapaneseSymbol</h2>
+}
+
+<input type="text" @bind="_inputText" @bind:event="oninput"
+       @onkeydown="async ea => await KeyDown(ea)"/>
+
+<button type="button" class="btn btn-primary" @onclick="Guess">@(_currentSymbol is null ? "Start" : "Guess")</button>
+
+<h3>@_text</h3>
+
+@code {
+    private List<CategoryViewModel> _includedCategories = new();
+    private string _inputText = "";
+    private Symbol _currentSymbol;
+    private string _text = "";
+    private ISymbolRepository _symbolRepository;
+    private Func<Task<ISymbolRepository>> _symbolRepositoryFunc;
+
+    [Parameter] public Func<Task<ISymbolRepository>> SymbolRepository
+    {
+        set => _symbolRepositoryFunc = value;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        _symbolRepository = await _symbolRepositoryFunc();
+    }
+
+    private void OnCategoriesChanged(List<CategoryViewModel> categories)
+    {
+        _includedCategories = categories;
+    }
+    
+    private async Task KeyDown(KeyboardEventArgs ea)
+    {
+        if (ea.Code == "Enter")
+        {
+            await Guess();
+        }
+    }
+
+    private async Task Guess()
+    {
+        if (_includedCategories.Count == 0)
+        {
+            return;
+        }
+        
+        if (_currentSymbol is null)
+        {
+            _currentSymbol = await _symbolPicker.PickSymbol(
+                _includedCategories.Select(x => x.Name).ToList(), _symbolRepository);
+            return;
+        }
+
+        if (_guesser.Guess(_currentSymbol, _inputText))
+        {
+            _currentSymbol = await _symbolPicker.PickSymbol(
+                _includedCategories.Select(x => x.Name).ToList(), _symbolRepository);
+            _text = "Esatto!";
+        } else
+        {
+            _text = "Sbagliato! :(";
+        }
+        _inputText = "";
+
+        Task.Run(_symbolRepository.SaveChanges);
+    }
+}

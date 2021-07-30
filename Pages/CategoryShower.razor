@@ -1,3 +1,4 @@
+@using KanaTester
 @inject ICategoryRepository _categoryRepository;
 
 <div id="category-selector">
@@ -28,18 +29,6 @@
         category.Included = (bool) stateObj;
         
         await SelectedCategoriesChanged.InvokeAsync(_categories.Where(x => x.Included).ToList());
-        /*
-        var category = new CategoryViewModel { Name = categoryName, Included = (bool) stateObj };
-        
-        if (category.Included)
-        {
-            _includedCategories.Add(category);
-        } else
-        {
-            _includedCategories.RemoveAt(
-                _includedCategories.FindIndex(x => x.Name == category.Name));
-        }*/
-
     }
 
 }
